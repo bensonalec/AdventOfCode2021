@@ -1,4 +1,4 @@
-with open("dayX.txt") as fi:
+with open("day3.txt") as fi:
     readIn = fi.readlines()
 
 def preProcess(inp):
