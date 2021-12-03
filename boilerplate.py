@@ -1,4 +1,6 @@
-with open("dayX.txt") as fi:
+from aocd import lines, submit
+
+with open("sample.txt") as fi:
     readIn = fi.readlines()
 
 def preProcess(inp):
@@ -12,5 +14,10 @@ def partOne(inp):
 def partTwo(inp):
     pass
 
+#use sample input
 partOne(preProcess(readIn))
 partTwo(preProcess(readIn))
+
+#submit your input
+# submit(partOne(preProcess(lines)))
+# submit(partTwo(preProcess(lines)))
