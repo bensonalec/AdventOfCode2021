@@ -62,21 +62,20 @@ def partTwo(inp):
                                 boards[indY][ind][indX] = "X"
                     if(checkFinished(board)):
                         winDic[indY] = False
-
-    indY = [x for x,y in winDic.items() if y == True][0]
-    board = boards[indY]
-    for draw in draws:
-        for ind,line in enumerate(board):
-            for indX, char in enumerate(line):
-                if(char == draw):
-                    boards[indY][ind][indX] = "X"
-        if(checkFinished(board)):
-            return int(draw)*calculateSum(board)
+        else:
+            indY = [x for x,y in winDic.items() if y == True][0]
+            board = boards[indY]
+            for ind,line in enumerate(board):
+                for indX, char in enumerate(line):
+                    if(char == draw):
+                        boards[indY][ind][indX] = "X"
+            if(checkFinished(board)):
+                return int(draw)*calculateSum(board)
 
 #use sample input
 # partOne(preProcess(readIn))
 # partTwo(preProcess(readIn))
 
 #submit your input
-# submit(partOne(preProcess(lines)))
-# submit(partTwo(preProcess(lines)))
+print(partOne(preProcess(lines)))
+print(partTwo(preProcess(lines)))
