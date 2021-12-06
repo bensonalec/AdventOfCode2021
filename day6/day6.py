@@ -9,13 +9,13 @@ def preProcess(inp):
     return data
 
 def determineGrowth(fish):
-    zeroCount = tuple(6 if x == 0 else x-1 for x in fish)
-    newCount = tuple(8 for x in fish if x == 0)
+    zeroCount = [6 if x == 0 else x-1 for x in fish]
+    newCount = [8 for x in fish if x == 0]
     return zeroCount + newCount
 
 def partOne(inp):
-    cur = tuple(x for x in inp)
-    for i in range(0, 256):
+    cur = [x for x in inp]
+    for _ in range(0, 80):
         cur = determineGrowth(cur)
     return len(cur)
 
@@ -34,6 +34,7 @@ def partTwo(inp):
     curDic = defaultdict(lambda : 0)
     for x in cur:
         curDic[x] += 1
+
     for _ in range(0, 256):
         curDic = determineGrowthPTwo(curDic)
     total = 0
@@ -42,8 +43,8 @@ def partTwo(inp):
     return total
 
 #use sample input
-# partOne(preProcess(readIn))
-# partTwo(preProcess(readIn))
+print(partOne(preProcess(readIn)))
+print(partTwo(preProcess(readIn)))
 
 #submit your input
 # submit(partOne(preProcess(data)))
