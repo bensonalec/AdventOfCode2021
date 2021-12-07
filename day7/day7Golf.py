@@ -1,0 +1,1 @@
+from aocd import data, submit; import statistics as s; p = [int(x) for x in data.split(",")]; t = int(s.mean(p)); submit(int(sum([(abs(i - t) * (abs(i - t) + 1) / 2) for i in p])))
