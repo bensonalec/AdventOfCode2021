@@ -1,6 +1,6 @@
 from aocd import data, submit
 import statistics
-import math
+
 with open("sample.txt") as fi:
     readIn = fi.read()
 
@@ -13,13 +13,9 @@ def partOne(inp):
     return sum((i - target) for i in inp)
 
 def partTwo(inp):
-    su = 100000000000000000
+    su = float('inf')
     for z in inp:
-        tSu = 0
-        target = z
-        for i in inp:
-            ans = abs(i - 1 - target)
-            tSu += ans * (ans + 1) / 2
+        tSu = sum([(abs(i - 1 - z) * (abs(i - 1 - z) + 1) / 2) for i in inp])
         if(tSu < su):
             su = tSu
     return int(su)
