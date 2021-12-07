@@ -1,5 +1,6 @@
 from aocd import data, submit
 import statistics
+import math
 
 with open("sample.txt") as fi:
     readIn = fi.read()
@@ -13,12 +14,8 @@ def partOne(inp):
     return sum((i - target) for i in inp)
 
 def partTwo(inp):
-    su = float('inf')
-    for z in inp:
-        tSu = sum([(abs(i - 1 - z) * (abs(i - 1 - z) + 1) / 2) for i in inp])
-        if(tSu < su):
-            su = tSu
-    return int(su)
+    target = math.floor(statistics.mean(inp))
+    return int(sum([(abs(i - target) * (abs(i - target) + 1) / 2) for i in inp]))
 
 #use sample input
 # partOne(preProcess(readIn))
@@ -26,4 +23,4 @@ def partTwo(inp):
 
 #submit your input
 # submit(partOne(preProcess(data)))
-# submit(partTwo(preProcess(data)))
+partTwo(preProcess(data))
