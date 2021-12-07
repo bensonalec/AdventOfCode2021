@@ -10,11 +10,7 @@ def preProcess(inp):
 
 def partOne(inp):
     target = int(statistics.median(inp))
-    sum = 0
-    for i in inp:
-        sum += abs(i - target)
-    print(sum)
-    return sum
+    return sum((i - target) for i in inp)
 
 def partTwo(inp):
     su = 100000000000000000
@@ -30,8 +26,8 @@ def partTwo(inp):
 
 #use sample input
 # partOne(preProcess(readIn))
-# print(partTwo(preProcess(readIn)))
+# partTwo(preProcess(readIn))
 
 #submit your input
 # submit(partOne(preProcess(data)))
-print(partTwo(preProcess(data)))
+# submit(partTwo(preProcess(data)))
