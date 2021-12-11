@@ -100,8 +100,7 @@ def partTwo(inp):
 
 #use sample input
 # partOne(preProcess(readIn))
-print(partTwo(preProcess(readIn)))
-
+# partTwo(preProcess(readIn))
 #submit your input
 # submit(partOne(preProcess(lines)))
-submit(partTwo(preProcess(lines)))
+# submit(partTwo(preProcess(lines)))
