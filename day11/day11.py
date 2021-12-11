@@ -118,4 +118,4 @@ print(partOne(preProcess(readIn), 100))
 print(partTwo(preProcess(readIn)))
 #submit your input
 # submit(partOne(preProcess(lines), 100))
-# submit(partOne(preProcess(lines)))
+# submit(partTwo(preProcess(lines)))
